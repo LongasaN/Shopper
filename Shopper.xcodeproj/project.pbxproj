@@ -13,6 +13,11 @@
 		3FC32AF01CA1C80F00B9671F /* Shopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AEE1CA1C80F00B9671F /* Shopper.xcdatamodeld */; };
 		3FC32AF21CA1C80F00B9671F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC32AF11CA1C80F00B9671F /* Assets.xcassets */; };
 		3FC32AF51CA1C80F00B9671F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC32AF31CA1C80F00B9671F /* LaunchScreen.storyboard */; };
+		3FC32AFD1CA1C99700B9671F /* ShopperTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AFC1CA1C99700B9671F /* ShopperTableViewController.swift */; };
+		3FC32B021CA1CCB400B9671F /* ShoppingList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AFE1CA1CCB400B9671F /* ShoppingList+CoreDataProperties.swift */; };
+		3FC32B031CA1CCB400B9671F /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AFF1CA1CCB400B9671F /* ShoppingList.swift */; };
+		3FC32B041CA1CCB400B9671F /* ShoppingListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32B001CA1CCB400B9671F /* ShoppingListItem+CoreDataProperties.swift */; };
+		3FC32B051CA1CCB400B9671F /* ShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32B011CA1CCB400B9671F /* ShoppingListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		3FC32AF11CA1C80F00B9671F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FC32AF41CA1C80F00B9671F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FC32AF61CA1C80F00B9671F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC32AFC1CA1C99700B9671F /* ShopperTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopperTableViewController.swift; sourceTree = "<group>"; };
+		3FC32AFE1CA1CCB400B9671F /* ShoppingList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShoppingList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FC32AFF1CA1CCB400B9671F /* ShoppingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		3FC32B001CA1CCB400B9671F /* ShoppingListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShoppingListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FC32B011CA1CCB400B9671F /* ShoppingListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +66,14 @@
 		3FC32AE61CA1C80E00B9671F /* Shopper */ = {
 			isa = PBXGroup;
 			children = (
+				3FC32AFE1CA1CCB400B9671F /* ShoppingList+CoreDataProperties.swift */,
+				3FC32AFF1CA1CCB400B9671F /* ShoppingList.swift */,
+				3FC32B001CA1CCB400B9671F /* ShoppingListItem+CoreDataProperties.swift */,
+				3FC32B011CA1CCB400B9671F /* ShoppingListItem.swift */,
 				3FC32AE71CA1C80F00B9671F /* AppDelegate.swift */,
 				3FC32AE91CA1C80F00B9671F /* ViewController.swift */,
 				3FC32AEB1CA1C80F00B9671F /* Main.storyboard */,
+				3FC32AFC1CA1C99700B9671F /* ShopperTableViewController.swift */,
 				3FC32AF11CA1C80F00B9671F /* Assets.xcassets */,
 				3FC32AF31CA1C80F00B9671F /* LaunchScreen.storyboard */,
 				3FC32AF61CA1C80F00B9671F /* Info.plist */,
@@ -139,8 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC32AEA1CA1C80F00B9671F /* ViewController.swift in Sources */,
+				3FC32B031CA1CCB400B9671F /* ShoppingList.swift in Sources */,
 				3FC32AE81CA1C80F00B9671F /* AppDelegate.swift in Sources */,
+				3FC32B021CA1CCB400B9671F /* ShoppingList+CoreDataProperties.swift in Sources */,
+				3FC32B051CA1CCB400B9671F /* ShoppingListItem.swift in Sources */,
+				3FC32AFD1CA1C99700B9671F /* ShopperTableViewController.swift in Sources */,
 				3FC32AF01CA1C80F00B9671F /* Shopper.xcdatamodeld in Sources */,
+				3FC32B041CA1CCB400B9671F /* ShoppingListItem+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

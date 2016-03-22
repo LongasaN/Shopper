@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="ShoppingList" representedClassName=".ShoppingList" syncable="YES">
+        <attribute name="date" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="store" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ShoppingListItem" inverseName="shoppingList" inverseEntity="ShoppingListItem" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingListItem" representedClassName=".ShoppingListItem" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="price" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="purchased" attributeType="Boolean" syncable="YES"/>
+        <attribute name="quantity" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="shoppingList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="items" inverseEntity="ShoppingList" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ShoppingList" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="ShoppingListItem" positionX="-54" positionY="18" width="128" height="120"/>
+    </elements>
 </model>
