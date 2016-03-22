@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FC32AE81CA1C80F00B9671F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AE71CA1C80F00B9671F /* AppDelegate.swift */; };
+		3FC32AEA1CA1C80F00B9671F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AE91CA1C80F00B9671F /* ViewController.swift */; };
+		3FC32AED1CA1C80F00B9671F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC32AEB1CA1C80F00B9671F /* Main.storyboard */; };
+		3FC32AF01CA1C80F00B9671F /* Shopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AEE1CA1C80F00B9671F /* Shopper.xcdatamodeld */; };
+		3FC32AF21CA1C80F00B9671F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC32AF11CA1C80F00B9671F /* Assets.xcassets */; };
+		3FC32AF51CA1C80F00B9671F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC32AF31CA1C80F00B9671F /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3FC32AE41CA1C80E00B9671F /* Shopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC32AE71CA1C80F00B9671F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FC32AE91CA1C80F00B9671F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FC32AEC1CA1C80F00B9671F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FC32AEF1CA1C80F00B9671F /* Shopper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shopper.xcdatamodel; sourceTree = "<group>"; };
+		3FC32AF11CA1C80F00B9671F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FC32AF41CA1C80F00B9671F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FC32AF61CA1C80F00B9671F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FC32AE11CA1C80E00B9671F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FC32ADB1CA1C80E00B9671F = {
+			isa = PBXGroup;
+			children = (
+				3FC32AE61CA1C80E00B9671F /* Shopper */,
+				3FC32AE51CA1C80E00B9671F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FC32AE51CA1C80E00B9671F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FC32AE41CA1C80E00B9671F /* Shopper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FC32AE61CA1C80E00B9671F /* Shopper */ = {
+			isa = PBXGroup;
+			children = (
+				3FC32AE71CA1C80F00B9671F /* AppDelegate.swift */,
+				3FC32AE91CA1C80F00B9671F /* ViewController.swift */,
+				3FC32AEB1CA1C80F00B9671F /* Main.storyboard */,
+				3FC32AF11CA1C80F00B9671F /* Assets.xcassets */,
+				3FC32AF31CA1C80F00B9671F /* LaunchScreen.storyboard */,
+				3FC32AF61CA1C80F00B9671F /* Info.plist */,
+				3FC32AEE1CA1C80F00B9671F /* Shopper.xcdatamodeld */,
+			);
+			path = Shopper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FC32AE31CA1C80E00B9671F /* Shopper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FC32AF91CA1C80F00B9671F /* Build configuration list for PBXNativeTarget "Shopper" */;
+			buildPhases = (
+				3FC32AE01CA1C80E00B9671F /* Sources */,
+				3FC32AE11CA1C80E00B9671F /* Frameworks */,
+				3FC32AE21CA1C80E00B9671F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shopper;
+			productName = Shopper;
+			productReference = 3FC32AE41CA1C80E00B9671F /* Shopper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FC32ADC1CA1C80E00B9671F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Aquino;
+				TargetAttributes = {
+					3FC32AE31CA1C80E00B9671F = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 3FC32ADF1CA1C80E00B9671F /* Build configuration list for PBXProject "Shopper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FC32ADB1CA1C80E00B9671F;
+			productRefGroup = 3FC32AE51CA1C80E00B9671F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FC32AE31CA1C80E00B9671F /* Shopper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FC32AE21CA1C80E00B9671F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FC32AF51CA1C80F00B9671F /* LaunchScreen.storyboard in Resources */,
+				3FC32AF21CA1C80F00B9671F /* Assets.xcassets in Resources */,
+				3FC32AED1CA1C80F00B9671F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FC32AE01CA1C80E00B9671F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FC32AEA1CA1C80F00B9671F /* ViewController.swift in Sources */,
+				3FC32AE81CA1C80F00B9671F /* AppDelegate.swift in Sources */,
+				3FC32AF01CA1C80F00B9671F /* Shopper.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3FC32AEB1CA1C80F00B9671F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FC32AEC1CA1C80F00B9671F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FC32AF31CA1C80F00B9671F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FC32AF41CA1C80F00B9671F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FC32AF71CA1C80F00B9671F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FC32AF81CA1C80F00B9671F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FC32AFA1CA1C80F00B9671F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Shopper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shion.Shopper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3FC32AFB1CA1C80F00B9671F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Shopper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shion.Shopper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FC32ADF1CA1C80E00B9671F /* Build configuration list for PBXProject "Shopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FC32AF71CA1C80F00B9671F /* Debug */,
+				3FC32AF81CA1C80F00B9671F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FC32AF91CA1C80F00B9671F /* Build configuration list for PBXNativeTarget "Shopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FC32AFA1CA1C80F00B9671F /* Debug */,
+				3FC32AFB1CA1C80F00B9671F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3FC32AEE1CA1C80F00B9671F /* Shopper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3FC32AEF1CA1C80F00B9671F /* Shopper.xcdatamodel */,
+			);
+			currentVersion = 3FC32AEF1CA1C80F00B9671F /* Shopper.xcdatamodel */;
+			path = Shopper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3FC32ADC1CA1C80E00B9671F /* Project object */;
+}
