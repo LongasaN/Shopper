@@ -2,22 +2,79 @@
 //  ShopperTableViewController.swift
 //  Shopper
 //
-//  Created by student on 3/22/16.
+//  Created by Nina Longasa on 3/22/16.
 //  Copyright © 2016 Aquino. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 class ShopperTableViewController: UITableViewController {
+    
+    var managedObjectContext: NSManagedObjectContext!
+    var shoppingLists = [ShoppingList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addShoppingList:")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        reloadData()
+    }
+    
+    func reloadData() {
+        
+        let fetchRequest = NSFetchRequest(entityName: "ShoppingList")
+        
+        do{
+            if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [ShoppingList] {
+                shoppingLists = results
+                tableView.reloadData()
+            }
+        } catch {
+             fatalError("There was an error fetching shopping lists!")
+      }
+        
+    }
+    
+    func addShoppingList(sender: AnyObject?){
+        
+        let alert = UIAlertController(title: "Add", message: "ShoppingList", preferredStyle: .Alert)
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
+            
+            if let nameTextField = alert.textFields?[0], storeTextField = alert.textFields?[1], dateTextField = alert.textFields?[2], shoppingListEntity = NSEntityDescription.entityForName("ShoppingList", inManagedObjectContext: self.managedObjectContext), name = nameTextField.text, store = storeTextField.text, date = dateTextField.text
+            {
+                let newShoppingList = ShoppingList(entity: shoppingListEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+                
+                newShoppingList.name = name
+                newShoppingList.store = store
+                newShoppingList.date = date
+                
+                do {
+                    try self.managedObjectContext.save()
+                } catch {
+                    print("Error saving the managed object context!")
+                }
+                
+                self.reloadData()
+                
+            }
+        
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action) -> Void in
+            // This doesn't do anything
+        }
+        
+        alert.addTextFieldWithConfigurationHandler { (textField) in textField.placeholder = "Name" }
+        alert.addTextFieldWithConfigurationHandler { (textField) in textField.placeholder = "Store" }
+        alert.addTextFieldWithConfigurationHandler { (textField) in textField.placeholder = "Date" }
+        
+        alert.addAction(addAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +86,27 @@ class ShopperTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return shoppingLists.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingListCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let shoppingList = shoppingLists[indexPath.row]
+        
+        cell.textLabel?.text = shoppingList.name
+        cell.detailTextLabel?.text = shoppingList.store + " " + shoppingList.date
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
