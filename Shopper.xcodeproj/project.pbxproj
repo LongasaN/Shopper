@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F7529BA1CADA6C700C85A4A /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7529B91CADA6C700C85A4A /* ShoppingListTableViewController.swift */; };
 		3FC32AE81CA1C80F00B9671F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AE71CA1C80F00B9671F /* AppDelegate.swift */; };
 		3FC32AEA1CA1C80F00B9671F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC32AE91CA1C80F00B9671F /* ViewController.swift */; };
 		3FC32AED1CA1C80F00B9671F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC32AEB1CA1C80F00B9671F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F7529B91CADA6C700C85A4A /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 		3FC32AE41CA1C80E00B9671F /* Shopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC32AE71CA1C80F00B9671F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC32AE91CA1C80F00B9671F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				3FC32AE71CA1C80F00B9671F /* AppDelegate.swift */,
 				3FC32AE91CA1C80F00B9671F /* ViewController.swift */,
 				3FC32AEB1CA1C80F00B9671F /* Main.storyboard */,
+				3F7529B91CADA6C700C85A4A /* ShoppingListTableViewController.swift */,
 				3FC32AFC1CA1C99700B9671F /* ShopperTableViewController.swift */,
 				3FC32AF11CA1C80F00B9671F /* Assets.xcassets */,
 				3FC32AF31CA1C80F00B9671F /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				3FC32AFD1CA1C99700B9671F /* ShopperTableViewController.swift in Sources */,
 				3FC32AF01CA1C80F00B9671F /* Shopper.xcdatamodeld in Sources */,
 				3FC32B041CA1CCB400B9671F /* ShoppingListItem+CoreDataProperties.swift in Sources */,
+				3F7529BA1CADA6C700C85A4A /* ShoppingListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,7 @@
 				3FC32AFB1CA1C80F00B9671F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

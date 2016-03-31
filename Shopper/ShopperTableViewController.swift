@@ -107,6 +107,19 @@ class ShopperTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if let itemsTableViewController = storyboard?.instantiateViewControllerWithIdentifier("ShoppingListItems") as? ShoppingListTableViewController {
+            let list = shoppingLists[indexPath.row]
+            
+            itemsTableViewController.managedObjectContext = managedObjectContext
+            itemsTableViewController.selectedShoppingList = list
+            
+            navigationController?.pushViewController(itemsTableViewController, animated: true)
+        }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
