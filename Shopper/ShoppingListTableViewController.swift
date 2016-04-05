@@ -14,43 +14,112 @@ class ShoppingListTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     
     var selectedShoppingList: ShoppingList?
+    
+    var shoppingListItems = [ShoppingListItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addShoppingListItem:")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func reloadData() {
+        
+        if let selectedShoppingList = selectedShoppingList {
+            
+            if let listItems = selectedShoppingList.items?.allObjects as? [ShoppingListItem] {
+                shoppingListItems = listItems
+            }
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
+    func addShoppingListItem(sender: AnyObject?) {
+    
+        let alert = UIAlertController(title: "Add", message: "Shopping List Item", preferredStyle: .Alert)
+        
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
+            
+            if let nameTextField = alert.textFields?[0], priceTextField = alert.textFields?[1], quantityTextField = alert.textFields?[2], shoppingListItemEntity = NSEntityDescription.entityForName("ShoppingListItem", inManagedObjectContext: self.managedObjectContext), name = nameTextField.text, price = priceTextField.text, quantity = quantityTextField.text {
+                
+                let newShoppingListItem = ShoppingListItem(entity: shoppingListItemEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+                
+                newShoppingListItem.name = name
+                newShoppingListItem.quantity = Int(quantity)!
+                newShoppingListItem.price = Double(price)!
+                newShoppingListItem.purchased = false
+                newShoppingListItem.shoppingList = self.selectedShoppingList
+                
+                do {
+                    try self.managedObjectContext.save()
+                } catch {
+                    print("Error saving the managed objec context!")
+                }
+                
+                self.reloadData()
+                
+            }
+        }
+        
+        let cancelAction = UIAlertAction (title: "Cancel", style: .Default) { (action) -> Void in }
+        
+        alert.addTextFieldWithConfigurationHandler { (textField) in textField.placeholder = "Name" }
+        alert.addTextFieldWithConfigurationHandler { (textField) in textField.placeholder = "Price" }
+        alert.addTextFieldWithConfigurationHandler { (textField) in textField.placeholder = "Quantity" }
+        
+        alert.addAction(addAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return shoppingListItems.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingListItemCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let shoppingListItem = shoppingListItems[indexPath.row]
+        
+        
+        let sQuantity = String(shoppingListItem.quantity)
+        let sPrice = String(shoppingListItem.price)
+        let purchase = shoppingListItem.purchased
+        
+        cell.textLabel?.text = shoppingListItem.name
+        cell.detailTextLabel?.text = sQuantity + " | $" + sPrice
 
+        if purchase == false {
+            cell.accessoryType = .None
+        } else {
+            cell.accessoryType = .Checkmark
+        }
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
