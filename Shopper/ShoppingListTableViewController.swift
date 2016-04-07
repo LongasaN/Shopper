@@ -24,6 +24,17 @@ class ShoppingListTableViewController: UITableViewController {
 
         reloadData()
         
+        var totalCost = 0.0
+        
+        for list in shoppingListItems {
+            totalCost += Double(list.price) * Double(list.quantity)
+        }
+        
+        if let selectedShoppingList = selectedShoppingList {
+            title = selectedShoppingList.name + String(format: " $%.2f", totalCost)
+        } else {
+            title = "Shopping List Detail"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,6 +129,38 @@ class ShoppingListTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingListItemCell", forIndexPath: indexPath)
+        
+        let shoppingListItem = shoppingListItems[indexPath.row]
+        
+        let sQuantity = String(shoppingListItem.quantity)
+        let sPrice = String(shoppingListItem.price)
+        
+        if shoppingListItem.purchased == true {
+            cell.accessoryType = .None
+            shoppingListItem.purchased = false
+        } else {
+            cell.accessoryType = .Checkmark
+            shoppingListItem.purchased = true
+        }
+        
+        cell.textLabel?.text = shoppingListItem.name
+        cell.detailTextLabel?.text = sQuantity + " | $" + sPrice
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            print("Error saving the managed object context!")
+        }
+        
+        reloadData()
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
     }
     
 
