@@ -20,7 +20,7 @@ class ShoppingListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addShoppingListItem:")
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addShoppingListItem:"), UIBarButtonItem(title: "Filter", style: .Plain, target: self, action: "selectFilter:"), UIBarButtonItem(title: "Sort", style: .Plain, target: self, action: "selectSort:")]
 
         reloadData()
         
@@ -42,18 +42,104 @@ class ShoppingListTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func reloadData() {
+    func reloadData(nameFilter: String? = nil, sortDescriptor: String? = nil ) {
         
-        if let selectedShoppingList = selectedShoppingList {
+        let fetchRequest = NSFetchRequest(entityName: "ShoppingListItem")
+        
+        //first predicate
+        let listPredicate = NSPredicate(format: "shoppingList =[c] %@", selectedShoppingList!)
+    
+        //second predicate
+        if let nameFilter = nameFilter {
+            let namePredicate = NSPredicate(format: "name =[c] %@", nameFilter)
+            fetchRequest.predicate = namePredicate
+            
+            let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicateType.AndPredicateType, subpredicates: [listPredicate, namePredicate])
+            
+            fetchRequest.predicate = compoundPredicate
+        } else {
+            fetchRequest.predicate = listPredicate
+        }
+        
+        if let sortDescriptor = sortDescriptor {
+            let sort = NSSortDescriptor(key: sortDescriptor, ascending: true)
+            fetchRequest.sortDescriptors = [sort]
+        }
+        
+        /*if let selectedShoppingList = selectedShoppingList {
             
             if let listItems = selectedShoppingList.items?.allObjects as? [ShoppingListItem] {
                 shoppingListItems = listItems
             }
         }
         
-        tableView.reloadData()
+        tableView.reloadData() */
+        
+        do {
+            if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [ShoppingListItem] {
+                shoppingListItems = results
+                tableView.reloadData()
+            }
+        } catch {
+            fatalError("There was an error fetching shopping lists!")
+        }
+
         
     }
+    
+    func selectSort(sender: AnyObject?){
+        
+        let sheet = UIAlertController(title: "Sort", message: "Shopping List Items", preferredStyle: .ActionSheet)
+        
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {(action) -> Void in}))
+        
+        // By Store
+        sheet.addAction(UIAlertAction(title: "By Name", style: .Default, handler: {(action) -> Void in
+            self.reloadData(nil, sortDescriptor: "name")
+        }))
+        
+        // By Name
+        sheet.addAction(UIAlertAction(title: "By Price", style: .Default, handler: {(action) -> Void in
+            self.reloadData(nil, sortDescriptor: "price")
+        }))
+        
+        // By Date
+        sheet.addAction(UIAlertAction(title: "By Quantity", style: .Default, handler: {(action) -> Void in
+            self.reloadData(nil, sortDescriptor: "quantity")
+        }))
+        
+        presentViewController(sheet, animated: true, completion: nil)
+    }
+    
+    
+    func selectFilter(sender: AnyObject?){
+        
+        let alert = UIAlertController(title: "Filter", message: "Shopping Lists", preferredStyle: .Alert)
+        
+        let filterAction = UIAlertAction(title: "Filter", style: .Default) {
+            (action) -> Void in
+            
+            if let nameTextField = alert.textFields?[0], name = nameTextField.text {
+                self.reloadData(name)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) {
+            (action) -> Void in
+            self.reloadData()
+        }
+        
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Name"
+        }
+        
+        alert.addAction(filterAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
     
     func addShoppingListItem(sender: AnyObject?) {
     
